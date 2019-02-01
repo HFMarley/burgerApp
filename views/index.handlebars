@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-5 mb-5">
+      <h1 class="text-center main-title">Super Massive Burger Cravings!</h1>
+      <h1 class="text-center title-burger">Share all of your juciest burger fantasies here</h2>
+      <form class="create-form text-center">
+        <div class="form-group text-center">
+          <textarea class="description" type="text" id="bu" name="name"></textarea>
+        </div>
+        <button class="burger-button btn-danger" type="submit">Create Burger</button>
+      </form>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-5 burger-section p-3 mt-5">
+      
+        <div class="no-opacity">
+          <h3 class="text-center burger-word">Devour Me Now</h2>
+          <ol class="burger-menu">
+            {{#each burgers}} {{#unless devoured}} {{> burgers/new_burger devoured=true}} {{/unless}} {{/each}}
+          </ol>
+        </div>
+    
+    </div>
+
+    <div class="col-md-5 burger-section p-3 mt-5">
+          <h3 class="text-center burger-word">Devoured For Life</h2>
+          <ul class="no-opacity">
+            {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=false}} {{/if}} {{/each}}
+          </ul>
+    </div>
+  </div>
+
+</div>
+</div>
